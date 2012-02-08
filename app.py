@@ -5,11 +5,11 @@ from flaskext.oauth import OAuth
 
 SECRET_KEY = 'development key'
 DEBUG = True
-FACEBOOK_APP_ID = 'xx'
-FACEBOOK_APP_SECRET = 'xx'
+FACEBOOK_APP_ID = os.environ.get('FACEBOOK_APP_ID')
+FACEBOOK_APP_SECRET = os.environ.get('FACEBOOK_APP_SECRET')
 
 
-app = Flask(__name__)
+app = app = Flask(__name__, static_folder='static', template_folder='templates')
 app.debug = DEBUG
 app.secret_key = SECRET_KEY
 oauth = OAuth()
