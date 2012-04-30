@@ -24,7 +24,6 @@ facebook = oauth.remote_app('facebook',
 	request_token_params={'scope': 'email'}
 )
 
-
 def authenticated(func):
 	def with_logging(*args, **kwargs):
 		print func.__name__ + " was called"
